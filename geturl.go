@@ -43,7 +43,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	//get large images
 	feedr := strings.Replace(feedx, "236x", "1200x", -1)
 	//replace empty descriptions
-	feeds := strings.Replace(feedr, "<description></description>", "<description>hid360.com</description>", -1)
+	feeds := strings.Replace(feedr, "<description></description>", "<description>https://get-our.app/css</description>", -1)
 	//replace all titles
 	feedt := strings.Replace(feeds, "<title>", "<!-- title>", -1)
 	feedu := strings.Replace(feedt, "</title>", "</title -->", -1)
@@ -53,12 +53,12 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	//create new titles
 	feedk := strings.Replace(feedj, "&gt;&lt;/a&gt;", "&gt;&lt;/a&gt;</description1><title>", -1)
 	//feedl := strings.Replace(feedk, "</description1><pubDate>", "&lt;p&gt;&lt;a href=&quot;https://www.homeinteriordesign.org&quot;&gt;Here is an awesome home interior design and decor blog&lt;/a&gt;&lt;/p&gt;</title><pubDate>", -1)
-	feedl := strings.Replace(feedk, "</description1><pubDate>", "&lt;p&gt;&lt;a href=&quot;http://www.homeinteriordesign.org/2018/02/short-guide-to-interior-decoration.html&quot;&gt;Short guide to interior decoration&lt;/a&gt;&lt;/p&gt;</title><pubDate>", -1)
+	feedl := strings.Replace(feedk, "</description1><pubDate>", "&lt;p&gt;&lt;a href=&quot;https://get-our.app/css&quot;&gt;Get Our App&lt;/a&gt;&lt;/p&gt;</title><pubDate>", -1)
 	//restore description
 	feedm := strings.Replace(feedl, "</description1>", "</description>", -1)
 	feedn := strings.Replace(feedm, "<description1>", "<description>", -1)
 	//add mandatory titles to channel
-	feedo := strings.Replace(feedn, "<channel>", "<channel><title>Pinterest Large Image Feed by homeinteriordesign.org</title>", -1)
+	feedo := strings.Replace(feedn, "<channel>", "<channel><title>Colorado Shooting Sports</title>", -1)
 	//deal with stray p tags
 	feedp := strings.Replace(feedo, "<title>&lt;/p&gt;", "<title>", -1)
 	feedq := strings.Replace(feedp, "<description>&lt;p&gt;", "<description>", -1)
